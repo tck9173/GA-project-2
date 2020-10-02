@@ -12,6 +12,8 @@ Bronze
 
 -User can add new crop to site - full CRUD
 
+-Record crop quality
+
 Silver
 	
 -Gifting ability to increase relation levels
@@ -19,6 +21,8 @@ Silver
 -Visually layout farm to match game 
 
 -Ability to visit other users farms
+
+-Crop quality game
 
 Gold
 
@@ -31,6 +35,8 @@ Gold
 -User can add drinks to their page and assign own rating
 
 -Abilty for user to select one of three layouts for their farm  
+
+-Gift history
 
 
 ERD:
