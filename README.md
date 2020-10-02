@@ -33,6 +33,8 @@ Gold
 -Abilty for user to select one of three layouts for their farm  
 
 
+ERD:
+
 Tables 
 	
 -Users
@@ -42,3 +44,10 @@ Tables
 -Gifting - join table -stretch
 
 -Farm 
+
+ERD:
+
+
+Wireframes:
+
+User stories:
