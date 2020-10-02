@@ -1,5 +1,5 @@
 # GA-project-2
-Stardew Valley
+Ghee Ayy Valley
 Build a farm and friendships! Create your user, add crops to your farm and let the friendships grow.
 	
 Functionality - MVP
@@ -14,25 +14,19 @@ Bronze
 
 -Record crop quality
 
-Silver
-	
 -Gifting ability to increase relation levels
+
+Silver
 
 -Visually layout farm to match game 
 
--Ability to visit other users farms
+-Ability to visit other friends' farms
 
 -Crop quality game
 
 Gold
 
--Bar easter egg 
-
--Uses same users
-
--Ability to add drinks and ratings to database
-
--User can add drinks to their page and assign own rating
+-Bar easter egg  -Ability to add drinks and ratings to database
 
 -Abilty for user to select one of three layouts for their farm  
 
@@ -47,13 +41,21 @@ Tables
 	
 -Crops
 
--Gifting - join table -stretch
+-Farm/Inventory
 
--Farm 
-
-ERD:
+-Friends
 
 
 Wireframes:
 
 User stories:
+
+"I wanted to create crops and add them to my farm. Becuase of this app I was able to do that!"
+
+"There was no good way to remember what I had in my farm before this app. Thanks Ghee Ayy Valley!"
+
+"My friends needed crops that I had extras of. I was able to transfer the crops with this app."
+
+"I really wanted to visit my friend's farm but could'nt because of COVID. This app let me visit their farm!"
+
+"I had a lot of crops but no friends. Problem solved with this app!"
