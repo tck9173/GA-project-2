@@ -12,12 +12,21 @@ const renderSignup = (req,res) => {
 const createUser = (req,res) => {
     Users.create(req.body)
     .then(newUser => {
-        res.redirect(`/users/profile/${newUser.id}`)
+        res.redirect(`users/profile/${newUser.id}`)
     })
 }
 
+const renderProfile = (req,res) => {
+    Users.findByPk(req.params.index)
+    .then(foundUser => {
+        res.render('users/profile.ejs', {
+            user: foundUser
+        })
+    })
+}
 module.exports = {
     renderIndex,
     renderSignup,
-    createUser
+    createUser,
+    renderProfile
 }
