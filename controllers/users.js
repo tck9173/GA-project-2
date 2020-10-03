@@ -40,11 +40,20 @@ const renderProfile = (req,res) => {
         })
     })
 }
+
+const deleteUser = (req,res) => {
+    Users.destroy({
+        where: {id: req.params.index}
+    })
+    .then(res.redirect('/users/'));
+}
+
 module.exports = {
     renderIndex,
     renderSignup,
     createUser,
     renderProfile,
     renderLogin,
-    loginAction
+    loginAction,
+    deleteUser
 }
