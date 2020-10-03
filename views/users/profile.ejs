@@ -7,9 +7,12 @@
     </head>
     <body>
         <h1>Welcome <%=user.name%> </h1>
+        <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value='<%=user.name%>'/></br>
             Username: <input type="text" name="username" value='<%=user.username%>'/></br>
             Password: <input type="text" name="password" value='<%=user.password%>'/></br>
+            <input type="submit" name="" value="Save Changes"/>
+        </form>
         <form action='/users/profile/<%=user.id%>?_method=DELETE' method='POST'>
             <input type='submit'  value="DELETE"/>
         </form>

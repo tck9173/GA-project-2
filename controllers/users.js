@@ -16,7 +16,7 @@ const renderLogin = (req, res) => {
 const createUser = (req,res) => {
     Users.create(req.body)
     .then(newUser => {
-        res.redirect(`users/profile/${newUser.id}`)
+        res.redirect(`/users/profile/${newUser.id}`)
     })
 }
 
@@ -41,6 +41,16 @@ const renderProfile = (req,res) => {
     })
 }
 
+const editProfile = (req,res) => {
+    Users.update(req.body, {
+        where: {id: req.params.index},
+        returning: true,
+    })
+    .then(user => {
+        res.redirect(`/users/profile/${req.params.index}`);
+    })
+}
+
 const deleteUser = (req,res) => {
     Users.destroy({
         where: {id: req.params.index}
@@ -55,5 +65,6 @@ module.exports = {
     renderProfile,
     renderLogin,
     loginAction,
-    deleteUser
+    deleteUser,
+    editProfile
 }
