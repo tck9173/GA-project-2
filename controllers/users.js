@@ -5,6 +5,11 @@ const renderIndex = (req, res) => {
     res.render('users/index.ejs')
 }
 
+const renderSignup = (req,res) => {
+    res.render('users/signup.ejs')
+}
+
 module.exports = {
-    renderIndex
+    renderIndex,
+    renderSignup
 }
