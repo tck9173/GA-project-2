@@ -20,6 +20,18 @@ const createUser = (req,res) => {
     })
 }
 
+const loginAction = (req,res) => {
+    Users.findOne({
+        where: {
+            username: req.body.username,
+            password: req.body.password
+        }
+    })
+    .then(foundUser => {
+        res.redirect(`/users/profile/${foundUser.id}`);
+    })
+}
+
 const renderProfile = (req,res) => {
     Users.findByPk(req.params.index)
     .then(foundUser => {
@@ -33,5 +45,6 @@ module.exports = {
     renderSignup,
     createUser,
     renderProfile,
-    renderLogin
+    renderLogin,
+    loginAction
 }

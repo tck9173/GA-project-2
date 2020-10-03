@@ -8,5 +8,6 @@ router.get('/profile/:index', ctrl.users.renderProfile);
 router.get('/login', ctrl.users.renderLogin);
 
 router.post('/signup', ctrl.users.createUser);
+router.post('/login', ctrl.users.loginAction);
 
 module.exports = router;
