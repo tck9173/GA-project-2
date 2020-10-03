@@ -9,7 +9,15 @@ const renderSignup = (req,res) => {
     res.render('users/signup.ejs')
 }
 
+const createUser = (req,res) => {
+    Users.create(req.body)
+    .then(newUser => {
+        res.redirect(`/users/profile/${newUser.id}`)
+    })
+}
+
 module.exports = {
     renderIndex,
-    renderSignup
+    renderSignup,
+    createUser
 }
