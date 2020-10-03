@@ -9,6 +9,10 @@ const renderSignup = (req,res) => {
     res.render('users/signup.ejs')
 }
 
+const renderLogin = (req, res) => {
+    res.render('users/login.ejs')
+}
+
 const createUser = (req,res) => {
     Users.create(req.body)
     .then(newUser => {
@@ -28,5 +32,6 @@ module.exports = {
     renderIndex,
     renderSignup,
     createUser,
-    renderProfile
+    renderProfile,
+    renderLogin
 }
