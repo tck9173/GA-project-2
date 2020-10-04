@@ -10,4 +10,6 @@ router.post('/new', ctrl.crops.createCrop);
 
 router.put('/:index', ctrl.crops.editCropAction);
 
+router.delete('/:index', ctrl.crops.deleteCrop);
+
 module.exports = router;

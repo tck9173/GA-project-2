@@ -40,11 +40,17 @@ const editCropAction = (req,res) => {
     })
 }
 
-
+const deleteCrop = (req,res) => {
+    Crops.destroy({
+        where: {id: req.params.index}
+    })
+    .then(res.redirect('/crops/'));
+}
 module.exports = {
     renderCropIndex,
     renderCropNew,
     createCrop,
     renderCropEdit,
-    editCropAction
+    editCropAction,
+    deleteCrop
 }

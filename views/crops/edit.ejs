@@ -10,5 +10,8 @@
             Name: <input type="text" name="name" value='<%=crop.name%>' required/>
             <input type="submit" name="" value="Submit Crop"/>
         </form>
+        <form action='/crops/<%=crop.id%>?_method=DELETE' method='POST'>
+            <input type='submit'  value="DELETE"/>
+        </form>
     </body>
 </html>
