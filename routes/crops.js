@@ -8,4 +8,6 @@ router.get('/:index', ctrl.crops.renderCropEdit);
 
 router.post('/new', ctrl.crops.createCrop);
 
+router.put('/:index', ctrl.crops.editCropAction);
+
 module.exports = router;

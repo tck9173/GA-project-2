@@ -30,11 +30,21 @@ const renderCropEdit = (req,res) => {
     })
 }
 
+const editCropAction = (req,res) => {
+    Crops.update(req.body, {
+        where: {id: req.params.index},
+        returning: true
+    })
+    .then(crop => {
+        res.redirect('/crops')
+    })
+}
 
 
 module.exports = {
     renderCropIndex,
     renderCropNew,
     createCrop,
-    renderCropEdit
+    renderCropEdit,
+    editCropAction
 }
