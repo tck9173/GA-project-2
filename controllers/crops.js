@@ -1,5 +1,3 @@
-const { renderIndex } = require('./users');
-
 const Crops = require('../models').Crops;
 const Users = require('../models').Users;
 
@@ -23,8 +21,20 @@ const createCrop = (req,res) => {
     })
 }
 
+const renderCropEdit = (req,res) => {
+    Crops.findByPk(req.params.index)
+    .then(crop => {
+        res.render('crops/edit.ejs', {
+            crop: crop
+        })    
+    })
+}
+
+
+
 module.exports = {
     renderCropIndex,
     renderCropNew,
-    createCrop
+    createCrop,
+    renderCropEdit
 }

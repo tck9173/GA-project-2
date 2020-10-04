@@ -4,6 +4,7 @@ const ctrl = require('../controllers');
 
 router.get('/', ctrl.crops.renderCropIndex);
 router.get('/new', ctrl.crops.renderCropNew);
+router.get('/:index', ctrl.crops.renderCropEdit);
 
 router.post('/new', ctrl.crops.createCrop);
 
