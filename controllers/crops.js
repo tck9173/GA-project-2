@@ -12,6 +12,19 @@ const renderCropIndex = (req,res) => {
     });
 }
 
+const renderCropNew = (req,res) => {
+    res.render('crops/new.ejs')
+}
+
+const createCrop = (req,res) => {
+    Crops.create(req.body)
+    .then(newCrop => {
+        res.redirect('/crops')
+    })
+}
+
 module.exports = {
-    renderCropIndex
+    renderCropIndex,
+    renderCropNew,
+    createCrop
 }
