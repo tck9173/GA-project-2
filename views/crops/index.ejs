@@ -5,7 +5,9 @@
         <link rel='stylesheet' href='/css/app.css'>
     </head>
     <body>
-        <h1>Welcome to the crop page!</h1>
+        <header>
+            <h1>Welcome to the crop page!</h1>
+        </header>
         <ul class = 'crop'>
             <% for(let i = 0; i < crop.length; i++){ %>
                 <li>
@@ -13,8 +15,12 @@
 		        </li>
             <% } %>
         </ul>
-        <nav>
-            <a href="/crops/new">Create New Crop</a>
-        </nav>
+        
+        <footer>
+            <nav>
+                <a href="/crops/new">Create New Crop</a>
+                <a href="/users">Take me to HomePage</a>
+            </nav>
+        </footer>
     </body>
 </html>
