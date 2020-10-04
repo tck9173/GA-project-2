@@ -10,7 +10,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'))
 
 app.use('/users', routes.users);
-
+app.use('/crops', routes.crops);
 
 
 

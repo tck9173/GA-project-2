@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel='stylesheet' href='/css/app.css'>
+    </head>
+    <body>
+        <h1>Welcome to the crop page!</h1>
+        <ul class = 'crop'>
+            <% for(let i = 0; i < crop.length; i++){ %>
+                <li>
+                    <a href='/crops/<%=crop[i].id%>'><%=crop[i].name%></a>
+		        </li>
+            <% } %>
+        </ul>
+    </body>
+</html>
