@@ -33,9 +33,11 @@ header {
 .crop {
     width: 200px;
     height: 200px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     list-style-type: none;
     padding: 0;
+    border: 3px solid rgb(103, 93, 214);
+    border-radius: 10px;
 }
 
 li {
