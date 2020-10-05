@@ -10,11 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Crops.belongsTo(models.Users, {foreignKey: "userId"});
     }
   };
   Crops.init({
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    userId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Crops',

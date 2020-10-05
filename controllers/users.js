@@ -33,7 +33,12 @@ const loginAction = (req,res) => {
 }
 
 const renderProfile = (req,res) => {
-    Users.findByPk(req.params.index)
+    Users.findByPk(req.params.index, {
+        include: [{
+            model: Crops,
+            attributes: ['id', 'name']
+        }]
+    })
     .then(foundUser => {
         res.render('users/profile.ejs', {
             user: foundUser

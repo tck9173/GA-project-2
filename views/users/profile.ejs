@@ -37,7 +37,12 @@
                 <h2>Your Crops</h2>
                 <br>
                 <h4>List of crops will go here</h4>
-                
+                <% for (let i=0; i<user.Crops.length; i++) { %>
+                    <li>
+                        <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%></a>
+                    </li>
+                    </br>
+                <% } %>
             </div>
             
 

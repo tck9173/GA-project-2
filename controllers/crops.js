@@ -22,7 +22,9 @@ const createCrop = (req,res) => {
 }
 
 const renderCropEdit = (req,res) => {
-    Crops.findByPk(req.params.index)
+    Crops.findByPk(req.params.index, {
+        include: [Users]
+    })
     .then(crop => {
         res.render('crops/edit.ejs', {
             crop: crop
