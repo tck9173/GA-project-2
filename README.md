@@ -8,13 +8,13 @@ Bronze
 
 -Full CRUD for users
 	
--User can control what crops they have - full CRUD
+-User can control what crops they have - full CRUD (NOTE: Assign crop to user)
 
 -User can add new crop to site - full CRUD
 
 -Record crop quality
 
--Gifting ability to increase relation levels
+-Gifting ability to increase relation levels (NOTE: transfer crop from one user to another. Inventory table must be set up before.)
 
 Silver
 
