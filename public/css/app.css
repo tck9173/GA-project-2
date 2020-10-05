@@ -44,6 +44,8 @@ footer {
 }
 
 li {
+    list-style-type: none;
+    padding: 0;
     margin: 20px;
 
 }
@@ -53,6 +55,11 @@ li {
     flex-direction: row;
     justify-content: space-evenly;
     
+}
+
+img {
+    height: 100px;
+    width: 100px;
 }
 
 

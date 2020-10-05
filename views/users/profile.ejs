@@ -29,20 +29,21 @@
             <div id="farm">
                 <h2>Your Farm</h2>
                 <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
-                
-                
-            </div>
-
-            <div id="user_info">
-                <h2>Your Crops</h2>
-                <br>
-                <h4>List of crops will go here</h4>
+                <h4>List of crops</h4>
                 <% for (let i=0; i<user.Crops.length; i++) { %>
                     <li>
                         <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%></a>
                     </li>
                     </br>
                 <% } %>
+                
+            </div>
+
+            <div id="user_info">
+                <h2>Make a friend!</h2>
+                <h3>Select Crop</h3>
+                <h3>Select User</h3>
+                
             </div>
             
 
@@ -53,6 +54,7 @@
                 <a href="/users/login">Log In</a>
                 <a href="/crops">Global Crop Page</a>
                 <a href="/users">Take me to HomePage</a>
+                <a href="/friend">Give Gifts</a>
             </nav>
         </footer>
     </body>
