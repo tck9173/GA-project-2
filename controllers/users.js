@@ -42,7 +42,7 @@ const renderProfile = (req,res) => {
             {
                 model:Users,
                 as: "Friends",
-                attributes: ['name']
+                attributes: ['name', 'id']
             }
         ]
     })

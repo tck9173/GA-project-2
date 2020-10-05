@@ -44,6 +44,7 @@
                 <h2>Make a friend!</h2>
                 <h3>Select Crop</h3>
                 <h3>Select User</h3>
+                
                 <label for ='add-friend'>Choose User</label>
                 <select name = 'userId2'>
                     <% for (let i=0; i<users.length; i++) { %>
@@ -52,10 +53,21 @@
                         <% } %>
                     <% } %>
                 </select>
+                
+                <label for ='add-friend'>Choose Crop</label>
+                <select name = 'crop.id'>
+                    <% for (let i=0; i<user.Crops.length; i++) { %>
+                            <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%></option>
+                    <% } %>
+                </select>
+
                 <input type="submit" name="" value="Add Friend"/>
                 </form>
-                
-                
+                <h4>List of Friends!</h4>
+                <% for (let i=0; i<user.Friends.length; i++) { %>
+                        
+                        <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
+                <% } %>
             </div>
             
 
