@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       relationship: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         defaultValue: new Date(),

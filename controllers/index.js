@@ -1,4 +1,5 @@
 module.exports = {
     users: require('./users'),
-    crops: require('./crops')
+    crops: require('./crops'),
+    friends: require('./friends')
 }

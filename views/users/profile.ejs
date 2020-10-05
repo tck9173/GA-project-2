@@ -40,9 +40,21 @@
             </div>
 
             <div id="user_info">
+                <form action="/friends/new/<%=user.id%>" method='POST'>
                 <h2>Make a friend!</h2>
                 <h3>Select Crop</h3>
                 <h3>Select User</h3>
+                <label for ='add-friend'>Choose User</label>
+                <select name = 'userId2'>
+                    <% for (let i=0; i<users.length; i++) { %>
+                        <% if (users[i].id != user.id) { %>
+                            <option value="<%=users[i].id%>"><%=users[i].name%></option>
+                        <% } %>
+                    <% } %>
+                </select>
+                <input type="submit" name="" value="Add Friend"/>
+                </form>
+                
                 
             </div>
             

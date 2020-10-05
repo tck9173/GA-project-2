@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Users.hasMany(models.Crops, { foreignKey: "userId"});
+      Users.belongsToMany(models.Users, {
+        through:"Friend",
+        as: 'Friends',
+        foreignKey: "userId1",
+        otherKey: "userId2"
+      })
     }
   };
   Users.init({

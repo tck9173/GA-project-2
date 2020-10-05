@@ -34,14 +34,26 @@ const loginAction = (req,res) => {
 
 const renderProfile = (req,res) => {
     Users.findByPk(req.params.index, {
-        include: [{
+        include: [
+            {
             model: Crops,
             attributes: ['id', 'name']
-        }]
+            },
+            {
+                model:Users,
+                as: "Friends",
+                attributes: ['name']
+            }
+        ]
     })
     .then(foundUser => {
-        res.render('users/profile.ejs', {
-            user: foundUser
+        // console.log(foundUser.Friends[1].name)
+        Users.findAll()
+        .then( allUsers => {
+            res.render('users/profile.ejs', {
+            user: foundUser,
+            users: allUsers
+            })
         })
     })
 }
