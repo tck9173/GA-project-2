@@ -24,6 +24,9 @@ a {
 header {
     margin: 50px;
 }
+footer {
+    margin: 30px;
+}
 
 #container {
     width: 400px;
