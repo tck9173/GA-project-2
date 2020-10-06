@@ -64,7 +64,13 @@
 
                 <input type="submit" name="" value="Add Friend"/>
                 </form>
-                <h4>List of Friends!</h4>
+                <h4>People I have given gifts to.</h4>
+                <div id = "friends">
+                <% for (let i=0; i<user.Friends.length; i++) { %>
+                        <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
+                <% } %>
+                </div>
+                <h4>People that have given me gifts.</h4>
                 <div id = "friends">
                 <% for (let i=0; i<user.Friends.length; i++) { %>
                         <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
@@ -80,7 +86,7 @@
                 <a href="/users/login">Log In</a>
                 <a href="/crops">Global Crop Page</a>
                 <a href="/users">Take me to HomePage</a>
-                <a href="/friends">Give Gifts</a>
+                <a href="/friends/<%=user.id%>">Give Gifts</a>
             </nav>
         </footer>
     </body>

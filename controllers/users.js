@@ -47,7 +47,6 @@ const renderProfile = (req,res) => {
         ]
     })
     .then(foundUser => {
-        // console.log(foundUser.Friends[1].name)
         Users.findAll()
         .then( allUsers => {
             res.render('users/profile.ejs', {

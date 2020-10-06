@@ -24,6 +24,8 @@ Silver
 
 -Crop quality game
 
+-List of people that have given me gifts
+
 Gold
 
 -Bar easter egg  -Ability to add drinks and ratings to database
