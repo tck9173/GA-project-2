@@ -20,7 +20,15 @@ const renderCropNew = (req,res) => {
 }
 
 const createCrop = (req,res) => {
+    console.log(req.params.quality)
     req.body.userId = req.params.index;
+    if (req.params.quality > 60) {
+        req.body.quality = "high";
+    }else if (req.params.quality > 20) {
+        req.body.quality = "medium";
+    } else {
+        req.body.quality = "low";
+    }
     Crops.create(req.body)
     .then(newCrop => {
         res.redirect(`/users/profile/${req.params.index}`)
