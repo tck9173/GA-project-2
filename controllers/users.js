@@ -38,7 +38,7 @@ const renderProfile = (req,res) => {
         include: [
             {
             model: Crops,
-            attributes: ['id', 'name', 'quality']
+            attributes: ['id', 'name', 'quality', 'image']
             },
             {
                 model:Users,

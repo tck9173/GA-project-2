@@ -37,7 +37,9 @@
                 <div id="cropWrapper">
                     <% for (let i=0; i<user.Crops.length; i++) { %>
                         <li>
-                            <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%> <%=user.Crops[i].quality%></a>
+                            <a href='/crops/<%=user.Crops[i].id%>' class= "<%=user.Crops[i].quality%>">
+                                <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
+                            </a>
                         </li>
                         </br>
                     <% } %>
