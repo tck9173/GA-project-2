@@ -11,10 +11,16 @@ const renderCropIndex = (req,res) => {
 }
 
 const renderCropNew = (req,res) => {
-    res.render('crops/new.ejs')
+    Users.findByPk(req.params.index)
+    .then(foundUser => {
+        res.render('crops/new.ejs', {
+            user: foundUser
+        })
+    })
 }
 
 const createCrop = (req,res) => {
+    req.body.userId = req.params.index;
     Crops.create(req.body)
     .then(newCrop => {
         res.redirect('/crops')

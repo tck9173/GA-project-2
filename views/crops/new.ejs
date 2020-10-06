@@ -8,9 +8,9 @@
         <header>
             <h1>Create New Crop!!!</h1>
         </header>
-        <form action="/crops/new" method="POST">
+        
+        <form action="/crops/new/<%=user.id%>" method="POST">
             Name: <input type="text" name="name" required/>
-            UserId: <input type="number" name="userId" required/>
             <input type="submit" name="" value="Submit Crop"/>
         </form>
 

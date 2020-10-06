@@ -3,10 +3,10 @@ const router = express.Router();
 const ctrl = require('../controllers');
 
 router.get('/', ctrl.crops.renderCropIndex);
-router.get('/new', ctrl.crops.renderCropNew);
+router.get('/new/:index', ctrl.crops.renderCropNew);
 router.get('/:index', ctrl.crops.renderCropEdit);
 
-router.post('/new', ctrl.crops.createCrop);
+router.post('/new/:index', ctrl.crops.createCrop);
 
 router.put('/:index', ctrl.crops.editCropAction);
 
