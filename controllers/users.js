@@ -1,5 +1,6 @@
 const Crops = require('../models').Crops;
 const Users = require('../models').Users;
+const Friends = require('../models').Friends;
 
 const renderIndex = (req, res) => {
     res.render('users/index.ejs')
@@ -37,7 +38,7 @@ const renderProfile = (req,res) => {
         include: [
             {
             model: Crops,
-            attributes: ['id', 'name']
+            attributes: ['id', 'name', 'quality']
             },
             {
                 model:Users,
@@ -49,6 +50,8 @@ const renderProfile = (req,res) => {
     .then(foundUser => {
         Users.findAll()
         .then( allUsers => {
+            console.log(foundUser.Crops[0].name)
+            console.log(foundUser.Crops[0].quality)
             res.render('users/profile.ejs', {
             user: foundUser,
             users: allUsers

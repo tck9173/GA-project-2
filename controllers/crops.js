@@ -23,7 +23,7 @@ const createCrop = (req,res) => {
     req.body.userId = req.params.index;
     Crops.create(req.body)
     .then(newCrop => {
-        res.redirect('/crops')
+        res.redirect(`/users/profile/${req.params.index}`)
     })
 }
 

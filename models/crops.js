@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Crops.init({
     name: DataTypes.STRING,
-    userId: DataTypes.STRING
+    userId: DataTypes.INTEGER,
+    quality: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Crops',
