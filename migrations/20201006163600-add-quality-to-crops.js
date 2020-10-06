@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.addColumn('Crops', 
     'quality', 
     { 
-      type: Sequelize.INTEGER 
+      type: Sequelize.STRING 
     });
   },
 
