@@ -50,8 +50,6 @@ const renderProfile = (req,res) => {
     .then(foundUser => {
         Users.findAll()
         .then( allUsers => {
-            console.log(foundUser.Crops[0].name)
-            console.log(foundUser.Crops[0].quality)
             res.render('users/profile.ejs', {
             user: foundUser,
             users: allUsers

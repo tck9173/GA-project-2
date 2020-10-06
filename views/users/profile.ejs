@@ -7,14 +7,14 @@
     </head>
     <body>
         <header>
-            <h1>Welcome <%=user.name%> </h1>
-        </header>
-        
-        <div id="profile_wrapper">
+            
+            <div id= "userName">
+                <h1>Welcome <%=user.name%> </h1>
+            </div>
+            
 
-            <div id="user_info">
+            <div id="userInfo">
                 <h2>Your Information</h2>
-                <br>
                 <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
                     Name: <input type="text" name="name" value='<%=user.name%>'/></br>
                     Username: <input type="text" name="username" value='<%=user.username%>'/></br>
@@ -25,20 +25,28 @@
                     <input type='submit'  value="DELETE"/>
                 </form>
             </div>
+        </header>
+        
+        <div id="profile_wrapper">
+
+            
 
             <div id="farm">
-                <h2>Your Farm</h2>
                 <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
                 <h4>List of crops</h4>
+                <div id="cropWrapper">
+                    <% for (let i=0; i<user.Crops.length; i++) { %>
+                        <li>
+                            <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%> <%=user.Crops[i].quality%></a>
+                        </li>
+                        </br>
+                    <% } %>
+                </div>
+                <br><br>
                 <a href="/crops/new/<%=user.id%>">Create New Crop</a>
-                <% for (let i=0; i<user.Crops.length; i++) { %>
-                    <li>
-                        <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%> <%=user.Crops[i].quality%></a>
-                    </li>
-                    </br>
-                <% } %>
-                
             </div>
+
+            <div id="middle"></div>
 
             <div id="gifting">
                 <form action="/friends/new/<%=user.id%>" method='POST'>
@@ -64,17 +72,23 @@
 
                 <input type="submit" name="" value="Add Friend"/>
                 </form>
-                <h4>People I have given gifts to.</h4>
-                <div id = "friends">
-                <% for (let i=0; i<user.Friends.length; i++) { %>
-                        <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%> <%=user.Friends[i].Friend.relationship%></a>
-                <% } %>
+                
+                <div class = "friendsWrapper">
+                    <div><h4>People I have given gifts to.</h4></div>
+                    <div class = "friends">
+                    <% for (let i=0; i<user.Friends.length; i++) { %>
+                            <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%> <%=user.Friends[i].Friend.relationship%></a>
+                    <% } %>
+                    </div>
                 </div>
-                <h4>People that have given me gifts.</h4>
-                <div id = "friends">
-                <% for (let i=0; i<user.Friends.length; i++) { %>
-                        <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
-                <% } %>
+
+                <div class = "friendsWrapper">
+                    <div><h4>People that have given me gifts.</h4></div>
+                    <div class = "friends">
+                    <% for (let i=0; i<user.Friends.length; i++) { %>
+                            <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
+                    <% } %>
+                    </div>
                 </div>
             </div>
             
@@ -84,7 +98,6 @@
             <nav>
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
-                <a href="/crops">Global Crop Page</a>
                 <a href="/users">Take me to HomePage</a>
                 <a href="/friends/<%=user.id%>">Give Gifts</a>
             </nav>

@@ -15,14 +15,16 @@ a {
     text-decoration: none;
     color: white;
     border: 2px solid black;
-    background: rgb(103, 93, 214);
+    background: #415c57;
     border-radius: 6px;
     padding: 4px 10px;
     margin: 5px 5px 10px 10px;
 }
 
 header {
+    background-color: #625261AA;
     margin: 50px;
+    display: flex;
 }
 footer {
     margin: 30px;
@@ -39,31 +41,77 @@ footer {
     margin: 0 auto 20px;
     list-style-type: none;
     padding: 0;
-    border: 3px solid rgb(103, 93, 214);
+    border: 3px solid #89beb3;
     border-radius: 10px;
 }
 
 li {
     list-style-type: none;
-    padding: 0;
-    margin: 20px;
-
+    padding: 1px;
+    margin: 10px;
 }
 
 #profile_wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 100px;
+    margin: 20px 50px;
     
 }
 
 img {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 180px;
 }
 
-#friends {
+.friends {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gifting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+}
+#farm {
+    width: 30%;
+}
+#userInfo {
+    width: 30%;
+    align-items: left;
+
+}
+
+#cropWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 4px solid rgb(9, 35, 74);
+}
+
+#userName {
+    width: 60%;
+    font-size: 35px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0px 80px;
+    
+}
+
+#middle{
+    width: 10%;
+}
+
+h4 {
+    margin: 10px auto;
+}
+
+.friendsWrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -71,11 +119,8 @@ img {
     justify-content: center;
     border: 3px solid white;
     border-radius: 20px;
-    background: rgb(128, 93, 48);
+    background: #606060;
 }
 
-#gifting {
-    width: 30%;
-}
 
 
