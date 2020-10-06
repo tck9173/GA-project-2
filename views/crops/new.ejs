@@ -9,17 +9,23 @@
             <h1>Create New Crop!!!</h1>
         </header>
         
-        <form action="/crops/new/<%=user.id%>" method="POST">
+        <form action="/crops/new/<%=user.id%>" method="POST" id = 'newCrop'>
             Name: <input type="text" name="name" required/>
             <br>
-            Quality: <input type="number" name="quality" required/>
-            <br>
+            <div class="game">
+                <div id="startGame">
+                    Click here to start!
+                </div>
+                <div id="clickCounter">
+                    Click here to increase quality!
+                </div>
+                <div>Quality:</div>
+                <div id="qualityDisplay"></div>
+            </div>
             <input type="submit" name="" value="Submit Crop"/>
         </form>
-
+        
         <footer>
-            <h2>Set quality value 1 - 100</h2>
-            <h2>Stretch goal game would go here.</h2>
             <nav>
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
@@ -27,5 +33,6 @@
                 <a href="/users">Take me to HomePage</a>
             </nav>
         </footer>
+        <script src="/script/script.js"></script>
     </body>
 </html>
