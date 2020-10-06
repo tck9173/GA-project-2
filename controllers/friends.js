@@ -2,6 +2,11 @@ const Crops = require('../models').Crops;
 const Users = require('../models').Users;
 const Friend = require('../models').Friend;
 
+const renderFriendIndex = (req,res)=> {
+    res.render('friends/index.ejs')
+}
+
+
 const addFriend = (req, res) => {
     req.body.userId = req.body.userId2
     Crops.update(req.body, {
@@ -21,5 +26,6 @@ const addFriend = (req, res) => {
 
 
 module.exports = {
-    addFriend
+    addFriend,
+    renderFriendIndex
 }
