@@ -30,6 +30,7 @@
                 <h2>Your Farm</h2>
                 <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
                 <h4>List of crops</h4>
+                <a href="/crops/new">Create New Crop</a>
                 <% for (let i=0; i<user.Crops.length; i++) { %>
                     <li>
                         <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%></a>
@@ -39,11 +40,9 @@
                 
             </div>
 
-            <div id="user_info">
+            <div id="gifting">
                 <form action="/friends/new/<%=user.id%>" method='POST'>
                 <h2>Make a friend!</h2>
-                <h3>Select Crop</h3>
-                <h3>Select User</h3>
                 
                 <label for ='add-friend'>Choose User</label>
                 <select name = 'userId2'>
@@ -53,6 +52,7 @@
                         <% } %>
                     <% } %>
                 </select>
+                <br>
                 
                 <label for ='add-friend'>Choose Crop</label>
                 <select name = 'crop.id'>
@@ -60,14 +60,16 @@
                             <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%></option>
                     <% } %>
                 </select>
+                <br>
 
                 <input type="submit" name="" value="Add Friend"/>
                 </form>
                 <h4>List of Friends!</h4>
+                <div id = "friends">
                 <% for (let i=0; i<user.Friends.length; i++) { %>
-                        
                         <a href='/users/profile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
                 <% } %>
+                </div>
             </div>
             
 

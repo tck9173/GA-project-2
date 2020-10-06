@@ -18,7 +18,7 @@ a {
     background: rgb(103, 93, 214);
     border-radius: 6px;
     padding: 4px 10px;
-    margin: 40px;
+    margin: 5px 5px 10px 10px;
 }
 
 header {
@@ -36,7 +36,7 @@ footer {
 .crop {
     width: 200px;
     height: 200px;
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
     list-style-type: none;
     padding: 0;
     border: 3px solid rgb(103, 93, 214);
@@ -54,12 +54,28 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: 100px;
     
 }
 
 img {
     height: 100px;
     width: 100px;
+}
+
+#friends {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    border: 3px solid white;
+    border-radius: 20px;
+    background: rgb(128, 93, 48);
+}
+
+#gifting {
+    width: 30%;
 }
 
 
