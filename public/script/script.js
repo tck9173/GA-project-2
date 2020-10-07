@@ -7,6 +7,8 @@ const cropAttribute = document.querySelector('#newCrop');
 
 const oldCropAttribute = cropAttribute.getAttribute('action');
 
+cropAttribute.setAttribute('action', `${oldCropAttribute}/0`)
+
 const gameTimer = 10000;
 let qualityCounter = 0;
 
