@@ -22,10 +22,15 @@ a {
 }
 
 header {
+    margin: 50px;
+}
+
+#profileHeader {
     background-color: #625261AA;
     margin: 50px;
     display: flex;
 }
+
 footer {
     margin: 30px;
 }
@@ -75,37 +80,65 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    margin: 0px 30px;
 }
-#farm {
-    width: 30%;
+#farmWrapper {
+    display: flex;
+    flex-direction: row;
+    background: #94714f;
+    border-radius: 10px;
+
+}
+
+#crops {
+    margin: 0 20px;
+    border: #865840;
+
 }
 #userInfo {
     width: 30%;
-    align-items: left;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+#house {
+    margin: 40px 0;
 }
 
 #cropWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 4px solid rgb(9, 35, 74);
+    border: 4px solid #865840;
+    width: 300px;
+    height: 200px; 
 }
 
 #userName {
     width: 60%;
-    font-size: 35px;
+    font-size: 30px;
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 0px 80px;
-    
+    padding: 0px 60px;
 }
 
-#middle{
-    width: 10%;
+#showUserName {
+    width: 60%;
+    font-size: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0px 60px;
 }
+
+#userName h1 {
+    margin: 20px;
+}
+
 
 h4 {
     margin: 10px auto;

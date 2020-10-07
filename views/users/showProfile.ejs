@@ -6,25 +6,15 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        
-        
-        
             <div id="profileHeader">
-            <div id= "userName">
-                <h1>Welcome <%=user.name%> </h1>
+            <div id= "showUserName">
+                <h1>Welcome to <%=user.name%>'s Farm! </h1>
             </div>
             
 
             <div id="userInfo">
-                <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-                    Name: <input type="text" name="name" value='<%=user.name%>'/></br>
-                    Username: <input type="text" name="username" value='<%=user.username%>'/></br>
-                    Password: <input type="text" name="password" value='<%=user.password%>'/></br>
-                    <input type="submit" name="" value="Save Changes"/>
-                </form>
-                <form action='/users/profile/<%=user.id%>?_method=DELETE' method='POST'>
-                    <input type='submit'  value="DELETE"/>
-                </form>
+                Name: <%=user.name%></br>
+                Username: <%=user.username%></br>
             </div>
         </div>
         
@@ -37,7 +27,6 @@
                 <div id= "house">    
                 <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
                     <br><br>
-                    <a href="/crops/new/<%=user.id%>">Create New Crop</a>
                 </div>
                 
                 <div id = crops>
@@ -56,35 +45,11 @@
             </div>
             
 
-            
+            <div id="middle"></div>
 
-            <div id="gifting">
-                <form action="/friends/new/<%=user.id%>" method='POST'>
-                <h2>Make a friend!</h2>
-                
-                <label for ='add-friend'>Choose User</label>
-                <select name = 'userId2'>
-                    <% for (let i=0; i<users.length; i++) { %>
-                        <% if (users[i].id != user.id) { %>
-                            <option value="<%=users[i].id%>"><%=users[i].name%></option>
-                        <% } %>
-                    <% } %>
-                </select>
-                <br>
-                
-                <label for ='add-friend'>Choose Crop</label>
-                <select name = 'crop.id'>
-                    <% for (let i=0; i<user.Crops.length; i++) { %>
-                            <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
-                    <% } %>
-                </select>
-                <br>
-
-                <input type="submit" name="" value="Add Friend"/>
-                </form>
-                
+            <div id="gifting">                
                 <div class = "friendsWrapper">
-                    <div><h4>People I have given gifts to.</h4></div>
+                    <div><h4>People <%=user.name%> has given gifts to.</h4></div>
                     <div class = "friends">
                     <% for (let i=0; i<user.Friends.length; i++) { %>
                             <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%> <%=user.Friends[i].Friend.relationship%></a>
@@ -93,7 +58,7 @@
                 </div>
 
                 <div class = "friendsWrapper">
-                    <div><h4>People that have given me gifts.</h4></div>
+                    <div><h4>People that have given <%=user.name%> gifts.</h4></div>
                     <div class = "friends">
                     <% for (let i=0; i<user.Friends.length; i++) { %>
                             <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>

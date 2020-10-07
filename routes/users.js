@@ -5,6 +5,7 @@ const ctrl = require('../controllers');
 router.get('/', ctrl.users.renderIndex);
 router.get('/signup', ctrl.users.renderSignup);
 router.get('/profile/:index', ctrl.users.renderProfile);
+router.get('/showprofile/:index', ctrl.users.renderShowProfile);
 router.get('/login', ctrl.users.renderLogin);
 
 router.post('/signup', ctrl.users.createUser);

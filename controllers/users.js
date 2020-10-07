@@ -14,6 +14,7 @@ const renderLogin = (req, res) => {
     res.render('users/login.ejs')
 }
 
+
 const createUser = (req,res) => {
     Users.create(req.body)
     .then(newUser => {
@@ -58,6 +59,31 @@ const renderProfile = (req,res) => {
     })
 }
 
+const renderShowProfile = (req,res) => {
+    Users.findByPk(req.params.index, {
+        include: [
+            {
+            model: Crops,
+            attributes: ['id', 'name', 'quality']
+            },
+            {
+                model:Users,
+                as: "Friends",
+                attributes: ['name', 'id']
+            }
+        ]
+    })
+    .then(foundUser => {
+        Users.findAll()
+        .then( allUsers => {
+            res.render('users/showProfile.ejs', {
+            user: foundUser,
+            users: allUsers
+            })
+        })
+    })
+}
+
 const editProfile = (req,res) => {
     Users.update(req.body, {
         where: {id: req.params.index},
@@ -83,5 +109,6 @@ module.exports = {
     renderLogin,
     loginAction,
     deleteUser,
-    editProfile
+    editProfile,
+    renderShowProfile
 }
