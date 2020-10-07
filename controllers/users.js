@@ -42,15 +42,26 @@ const renderProfile = (req,res) => {
             attributes: ['id', 'name', 'quality', 'image']
             },
             {
-                model:Users,
-                as: "Friends",
-                attributes: ['name', 'id']
+            model:Users,
+            as: "Friends",
+            attributes: ['name', 'id']
             }
         ]
     })
     .then(foundUser => {
-        Users.findAll()
+        Users.findAll(
+        //     {
+        //     include: [
+        //         {
+        //         model:Users, 
+        //         as: "Friends",
+        //         }
+        //     ]
+        // }
+        )
         .then( allUsers => {
+            // console.log(allUsers[0].Friends.Friend[1])
+            // console.log(foundUser.Friends[5].Friend.userId2)
             res.render('users/profile.ejs', {
             user: foundUser,
             users: allUsers
