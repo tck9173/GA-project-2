@@ -155,5 +155,20 @@ h4 {
     background: #606060;
 }
 
+.low {
+    background-color: rgb(148, 64, 19);
+}
 
+.medium {
+    background-color: green;
+}
 
+.high {
+    background-color: gold;
+}
+
+.cropThumbnail {
+    height: 50px;
+    width: 50px;
+
+}
