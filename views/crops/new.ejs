@@ -13,14 +13,21 @@
             Name: <input type="text" name="name" required/><br>
             Image URL: <input type="text" name="image" required/><br>
             <div class="game">
-                <div id="startGame">
-                    Click here to start!
+                <p class = 'gameMessage'>Click Start</p>
+                <div class='gameBoard'>
+                    
+                    <div id="startGame">
+                        Click here to start!
+                    </div>
+                    <div id="clickCounter">
+                        Click here to increase quality!
+                    </div>
                 </div>
-                <div id="clickCounter">
-                    Click here to increase quality!
+                <div>
+                    <div>Quality:</div>
+                    <div id="qualityDisplay"></div> 
                 </div>
-                <div>Quality:</div>
-                <div id="qualityDisplay"></div>
+                
             </div>
             <input type="submit" name="" value="Submit Crop"/>
         </form>
@@ -29,8 +36,8 @@
             <nav>
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
-                <a href="/crops">Global Crop Page</a>
-                <a href="/users">Take me to HomePage</a>
+                <a href="/users/profile/<%=user.id%>">My Farm</a>
+                <a href="/users">HomePage</a>
             </nav>
         </footer>
         <script src="/script/script.js"></script>
