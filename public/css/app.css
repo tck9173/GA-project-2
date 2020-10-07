@@ -81,6 +81,7 @@ img {
     flex-direction: column;
     justify-content: center;
     margin: 0px 30px;
+    width: 400px;
 }
 #farmWrapper {
     display: flex;
@@ -146,7 +147,7 @@ h4 {
 
 .friendsWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
@@ -203,4 +204,7 @@ h4 {
     padding: 2px;
     border-radius: 5px;
     margin: 3px;
+}
+#cropWrapper li{
+    margin:20px;
 }

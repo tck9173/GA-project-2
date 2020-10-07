@@ -33,8 +33,8 @@
                 <h4>List of <%=user.name%>'s crops</h4>
                 <div id="cropWrapper">
                     <% for (let i=0; i<user.Crops.length; i++) { %>
-                        <li>
-                            <a href='/crops/<%=user.Crops[i].id%>'><%=user.Crops[i].name%> <%=user.Crops[i].quality%></a>
+                        <li class= "<%=user.Crops[i].quality%>">
+                                <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
                         </li>
                         </br>
                     <% } %>
@@ -74,7 +74,6 @@
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 <a href="/users">Take me to HomePage</a>
-                <a href="/friends/<%=user.id%>">Give Gifts</a>
             </nav>
         </footer>
     </body>
