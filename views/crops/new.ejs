@@ -10,8 +10,23 @@
         </header>
         
         <form action="/crops/new/<%=user.id%>" method="POST" id = 'newCrop'>
-            Name: <input type="text" name="name" required/><br>
-            Image URL: <input type="text" name="image" required/><br>
+            <label for = 'new-crop'>Choose Crop</label>
+            <select name = 'name'>
+                <option value='Burger'>Burger</option>
+                <option value='Cauliflower'>Cauliflower</option>
+                <option value='Corn'>Corn</option>
+                <option value='Grape'>Grape</option>
+                <option value='Hops'>Hops</option>
+                <option value='Pepper'>Pepper</option>
+                <option value='Pumpkin'>Pumpkin</option>
+                <option value='Spring_Onion'>Spring Onion</option>
+                <option value='Startfruit'>Starfruit</option>
+                <option value='Strawberry'>Strawberry</option>
+                <option value='Sunflower'>Sunflower</option>
+                <option value='Tomato'>Tomato</option>
+                <option value='Wheat'>Wheat</option>
+            </select>
+            
             <div class="game">
                 <p class = 'gameMessage'>Click Start</p>
                 <div class='gameBoard'>
