@@ -67,8 +67,11 @@
                 <select name = 'userId2'>
                     
                     <% for (let i=0; i<users.length; i++) { %>
-                        <% if (users[i].id != user.id) { %>   
+                        <% if (users[i].id != user.id) { %>
+                               
                             <% for (let j=0; j<user.Friends.length; j++) { %>
+                                
+                                
                                 <% if (users[i].id != user.Friends[j].id) { %>
                                     <option value="<%=users[j].id%>"><%=users[j].name%></option>
                                 <% } %>
