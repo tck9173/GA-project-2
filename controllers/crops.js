@@ -57,11 +57,20 @@ const editCropAction = (req,res) => {
 }
 
 const deleteCrop = (req,res) => {
-    Crops.destroy({
-        where: {id: req.params.index}
+    Crops.findByPk(req.params.index, {
+        include: [Users]
     })
-    .then(res.redirect('/crops/'));
+    .then(crop => {
+        console.log(crop)
+        Crops.destroy({
+            where: {id: req.params.index}
+        })
+        .then(deletedCrop => {
+            res.redirect(`/users/profile/${crop.User.id}`)
+        })
+    })
 }
+
 module.exports = {
     renderCropIndex,
     renderCropNew,
