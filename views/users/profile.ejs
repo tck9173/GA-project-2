@@ -68,7 +68,6 @@
                     
                     <% for (let i=0; i<users.length; i++) { %>
                         <% if (users[i].id != user.id) { %>   
-                            
                             <% for (let j=0; j<user.Friends.length; j++) { %>
                                 <% if (users[i].id != user.Friends[j].id) { %>
                                     <option value="<%=users[j].id%>"><%=users[j].name%></option>
@@ -102,14 +101,8 @@
                 <div class = "friendsWrapper">
                     <div><h4>People that have given me gifts.</h4></div>
                     <div class = "friends">
-                    <% for (let i=0; i<user.Friends.length; i++) { %>
-                        <p> <%=user.Friends[i].Friend.userId2%></p>
-                        <% if (user.Friends[i].Friend.userId2 === user.Id1) { %>
-                            <p>If Statement</p>
-                            <a href='/users/showprofile/<%=user.Friends[i].Friend.user%>'><%=user.Friends[i].Friend.user%></a>
-                        <% } %>   
-                        
-                        
+                    <% for (let i=0; i<user.Gifters.length; i++) { %>
+                        <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
                     <% } %>
                     </div>
                 </div>

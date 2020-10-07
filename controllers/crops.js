@@ -29,6 +29,7 @@ const createCrop = (req,res) => {
     } else {
         req.body.quality = "low";
     }
+    req.body.image = `/pictures/${req.body.name}.png`
     Crops.create(req.body)
     .then(newCrop => {
         res.redirect(`/users/profile/${req.params.index}`)
