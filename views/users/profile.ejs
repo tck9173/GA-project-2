@@ -63,12 +63,17 @@
             <div id="gifting">
                 <form action="/friends/new/<%=user.id%>" method='POST'>
                 <h2>Make a friend!</h2>
-                
                 <label for ='add-friend'>Choose User</label>
                 <select name = 'userId2'>
+                    
                     <% for (let i=0; i<users.length; i++) { %>
-                        <% if (users[i].id != user.id) { %>
-                            <option value="<%=users[i].id%>"><%=users[i].name%></option>
+                        <% if (users[i].id != user.id) { %>   
+                            
+                            <% for (let j=0; j<user.Friends.length; j++) { %>
+                                <% if (users[i].id != user.Friends[j].id) { %>
+                                    <option value="<%=users[j].id%>"><%=users[j].name%></option>
+                                <% } %>
+                            <% } %>
                         <% } %>
                     <% } %>
                 </select>
