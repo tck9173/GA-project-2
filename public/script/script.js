@@ -4,6 +4,7 @@ const startGame = document.querySelector('#startGame');
 const clickCounter = document.querySelector('#clickCounter');
 const qualityDisplay = document.querySelector('#qualityDisplay');
 const cropAttribute = document.querySelector('#newCrop');
+const gameMessage = document.querySelector('.gameMessage');
 
 const oldCropAttribute = cropAttribute.getAttribute('action');
 
@@ -15,6 +16,7 @@ let qualityCounter = 0;
 startGame.addEventListener('click', function(){
     console.log('Clicked');
     qualityCounter = 0;
+    countdown();
     setTimeout(setCropQuality, gameTimer)
 });
 
@@ -27,4 +29,17 @@ function setCropQuality() {
     console.log(`User clicked ${qualityCounter} times`)
     qualityDisplay.innerHTML = qualityCounter;
     cropAttribute.setAttribute('action', `${oldCropAttribute}/${qualityCounter}`)
+}
+
+function countdown() {
+    let countdownTime = 9;
+    const timeinterval = setInterval(() => {
+        gameMessage.innerHTML = `Time left: ${countdownTime}`;
+        countdownTime --;
+        if (countdownTime <= -1) {
+            gameMessage.innerHTML = `Time's up!`;  
+            clearInterval(timeinterval);
+        }
+      },1000);
+    
 }
