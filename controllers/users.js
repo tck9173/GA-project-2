@@ -54,7 +54,6 @@ const renderProfile = (req,res) => {
         ]
     })
     .then(foundUser => {
-        console.log(foundUser.Gifters[0].Friend.relationship)
         Users.findAll()
         .then( allUsers => {
             res.render('users/profile.ejs', {
