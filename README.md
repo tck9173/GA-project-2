@@ -49,6 +49,15 @@ Wireframes:
 
 ![Wireframe](https://i.imgur.com/5UuMnL4.png)
 
+Screenshots:
+![Screenshot](https://i.imgur.com/DPnDL9l.png)
+
+![Screenshot](https://i.imgur.com/eq75fMx.png)
+
+![Screenshot](https://i.imgur.com/s9xW4Uz.png)
+
+![Screenshot](https://i.imgur.com/B9pjQbu.png)
+
 User stories:
 
 "I wanted to create crops and add them to my farm. Becuase of this app I was able to do that!"
