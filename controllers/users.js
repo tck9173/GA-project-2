@@ -78,18 +78,29 @@ const renderShowProfile = (req,res) => {
             attributes: ['id', 'name', 'quality', 'image']
             },
             {
-                model:Users,
-                as: "Friends",
-                attributes: ['name', 'id']
+            model:Users,
+            as: "Friends",
+            attributes: ['name', 'id']
+            },
+            {
+            model:Users,
+            as: "Gifters",
+            attributes: ['name', 'id']
             }
         ]
     })
     .then(foundUser => {
         Users.findAll()
         .then( allUsers => {
-            res.render('users/showProfile.ejs', {
+            let notFriends = allUsers.filter(val => {
+                return !foundUser.Friends.some(v => {
+                    return val.id === v.id
+                })
+            })
+            res.render('users/showprofile.ejs', {
             user: foundUser,
-            users: allUsers
+            users: allUsers,
+            notFriends: notFriends
             })
         })
     })

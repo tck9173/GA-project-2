@@ -19,12 +19,10 @@
                 <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
                     Name: <input required type="text" name="name" value='<%=user.name%>' maxlength="16"/></br>
                     Username: <input required type="text" name="username" value='<%=user.username%>' maxlength="16"/></br>
-                    Password: <input required type="text" name="password" value='<%=user.password%>'maxlength="16"/></br>
+                    Password: <input required type="text" name="password" value='*********************'maxlength="16"/></br>
                     <input type="submit" name="" value="Save Changes"/>
                 </form>
-                <form action='/users/profile/<%=user.id%>?_method=DELETE' method='POST'>
-                    <input type='submit'  value="DELETE"/>
-                </form>
+                
             </div>
         </div>
         
@@ -138,12 +136,20 @@
 
         </div>
         <footer>
+            <div id = "footer1"></div>
+            <div id = "footer2">
             <nav>
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 <a href="/users">Take me to HomePage</a>
                 <a href="/friends/<%=user.id%>">Give Gifts</a>
             </nav>
+            </div>
+            <div id = "footer3">
+                <form action='/users/profile/<%=user.id%>?_method=DELETE' method='POST'>
+                    <input type='submit'  value="DELETE YOUR PAGE"/>
+                </form>
+            </div>
         </footer>
     </body>
 </html>

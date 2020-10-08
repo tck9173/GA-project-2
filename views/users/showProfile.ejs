@@ -6,15 +6,20 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
+        
+        
+        
             <div id="profileHeader">
-            <div id= "showUserName">
-                <h1>Welcome to <%=user.name%>'s Farm! </h1>
+            <div id= "userName">
+                <h1>Welcome to <%=user.name%>'s farm! </h1>
             </div>
             
 
-            <div id="userInfo">
-                Name: <%=user.name%></br>
-                Username: <%=user.username%></br>
+            <div id="showUserInfo">
+                    Name: <%=user.name%></br>
+                    Username: <%=user.username%></br>
+
+                
             </div>
         </div>
         
@@ -23,58 +28,84 @@
 
             
 
-            <div id="farmWrapper">
-                <div id= "house">    
-                <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
-                    <br><br>
+            <div id="leftWrapper">
+                <div id="farmWrapper">
+                    <div id= "house">    
+                    <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
+                        <br><br>
+                        <div class = "friendsWrapperLeft">
+                            <div><h4>Who has given crops to help your farm?:</h4></div>
+                            <div id = "friendsLeft">
+                            <% for (let i=0; i<user.Gifters.length; i++) { %>
+                                <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
+                            <% } %>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id = crops>
+                        <div id="cropWrapper">
+                            <% for (let i=0; i<user.Crops.length; i++) { %>
+                                
+                                <% if(i < 12 ) { %>
+                                    <li>
+                                        <a  class= "<%=user.Crops[i].quality%>">
+                                            <img class = 'cropThumbnail ' src="<%=user.Crops[i].image%>">
+                                        </a>
+                                    </li>
+                                
+                                <% } %>
+                            <% } %>
+                        </div>
+                        
+                    </div>
+                    
+                    
                 </div>
-                
-                <div id = crops>
-                <h4>List of <%=user.name%>'s crops</h4>
-                <div id="cropWrapper">
-                    <% for (let i=0; i<user.Crops.length; i++) { %>
-                        <li class= "<%=user.Crops[i].quality%>">
-                                <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
-                        </li>
-                        </br>
-                    <% } %>
-                </div>
-                </div>
-                <br><br>
                 
             </div>
             
 
-            <div id="middle"></div>
+            
 
-            <div id="gifting">                
-                <div class = "friendsWrapper">
-                    <div><h4>People <%=user.name%> has given gifts to.</h4></div>
-                    <div class = "friends">
+            <div id="gifting">
+                
+                <div id="makeFriend">
+                   
+                </div>
+                
+                <div class = "friendsWrapperRight">
+                    <div><h4>Your Friends:</h4></div>
+                    <div id = "friendsRight">
                     <% for (let i=0; i<user.Friends.length; i++) { %>
                             <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%> <%=user.Friends[i].Friend.relationship%></a>
                     <% } %>
                     </div>
                 </div>
 
-                <div class = "friendsWrapper">
-                    <div><h4>People that have given <%=user.name%> gifts.</h4></div>
-                    <div class = "friends">
-                    <% for (let i=0; i<user.Friends.length; i++) { %>
-                            <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%></a>
-                    <% } %>
-                    </div>
+                
+
+                <div id = "giveGifts">
+                    
                 </div>
             </div>
             
 
         </div>
         <footer>
+            <div id = "footer1"></div>
+            <div id = "footer2">
             <nav>
                 <a href="/users/signup">Sign Up</a>
                 <a href="/users/login">Log In</a>
                 <a href="/users">Take me to HomePage</a>
+                
             </nav>
+            </div>
+            <div id = "footer3">
+                
+            </div>
         </footer>
     </body>
 </html>
