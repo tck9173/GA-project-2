@@ -180,6 +180,16 @@ li {
     
 }
 
+#showProfile_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 50px;
+    height: 400px;
+    width: 912px;
+    
+}
+
 img {
     height: 150px;
     width: 180px;
@@ -226,6 +236,18 @@ img {
     
 }
 
+.showFriendsWrapperRight {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px 0 0 0;
+    width: 180px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: #606060;
+    margin: 10px;
+}
+
 .friendsWrapperRight h4 {
     margin: 5px 0 0px 0;
 }
@@ -263,7 +285,26 @@ img {
     overflow-x:hidden;
 }
 
+#showFriendsRight {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 300px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+
+
 #friendsRight a {
+    margin: 5px;
+    height: 15px;
+}
+
+#showFriendsRight a {
     margin: 5px;
     height: 15px;
 }
