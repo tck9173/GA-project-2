@@ -56,9 +56,15 @@ const renderProfile = (req,res) => {
     .then(foundUser => {
         Users.findAll()
         .then( allUsers => {
+            let notFriends = allUsers.filter(val => {
+                return !foundUser.Friends.some(v => {
+                    return val.id === v.id
+                })
+            })
             res.render('users/profile.ejs', {
             user: foundUser,
-            users: allUsers
+            users: allUsers,
+            notFriends: notFriends
             })
         })
     })
