@@ -120,7 +120,7 @@ const deleteUser = (req,res) => {
     Users.destroy({
         where: {id: req.params.index}
     })
-    .then(res.redirect('/users/'));
+    .then(res.redirect('https://giphy.com/gifs/harrypotter-7zoOcZshec8nqdFKeG/fullscreen'));
 }
 
 module.exports = {
