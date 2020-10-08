@@ -97,7 +97,7 @@ const renderShowProfile = (req,res) => {
                     return val.id === v.id
                 })
             })
-            res.render('users/showprofile.ejs', {
+            res.render('users/showProfile.ejs', {
             user: foundUser,
             users: allUsers,
             notFriends: notFriends
