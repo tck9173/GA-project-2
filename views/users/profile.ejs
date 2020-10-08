@@ -40,7 +40,7 @@
                             <div><h4>Who has given crops to help your farm?:</h4></div>
                             <div id = "friendsLeft">
                             <% for (let i=0; i<user.Gifters.length; i++) { %>
-                                <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
+                                <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%>: <%=user.Gifters[i].Friend.relationship%></a>
                             <% } %>
                             </div>
                         </div>
@@ -101,10 +101,10 @@
                 </div>
                 
                 <div class = "friendsWrapperRight">
-                    <div><h4>Your Friends:</h4></div>
+                    <div><h4>Your Friends: (name) (relationship level)</h4></div>
                     <div id = "friendsRight">
                     <% for (let i=0; i<user.Friends.length; i++) { %>
-                            <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%> <%=user.Friends[i].Friend.relationship%></a>
+                            <a href='/users/showprofile/<%=user.Friends[i].id%>'><%=user.Friends[i].name%>: <%=user.Friends[i].Friend.relationship%></a>
                     <% } %>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <label for ='add-friend'>Choose Crop</label>
                         <select name = 'crop.id' required>
                             <% for (let i=0; i<user.Crops.length; i++) { %>
-                                    <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%></option>
+                                    <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
                             <% } %>
                         </select>
                         <input type="submit" name="" value="Give Gift"/>
