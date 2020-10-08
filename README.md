@@ -41,6 +41,11 @@ Tables
 
 Wireframes:
 
+![Wireframe-1] (https://i.imgur.com/FbicITX.png)
+![Wireframe-2] (https://i.imgur.com/vqVywki.png)
+![Wireframe-3] (https://i.imgur.com/a9C4VIw.png)
+![Wireframe-4] (https://i.imgur.com/5UuMnL4.png)
+
 User stories:
 
 "I wanted to create crops and add them to my farm. Becuase of this app I was able to do that!"
