@@ -5,7 +5,8 @@ const clickCounter = document.querySelector('#clickCounter');
 const qualityDisplay = document.querySelector('#qualityDisplay');
 const cropAttribute = document.querySelector('#newCrop');
 const gameMessage = document.querySelector('.gameMessage');
-
+const instructionsShow = document.querySelector('.instructionsShow');
+const instructions = document.querySelector('.instructions');
 const oldCropAttribute = cropAttribute.getAttribute('action');
 
 cropAttribute.setAttribute('action', `${oldCropAttribute}/0`)
@@ -23,6 +24,10 @@ startGame.addEventListener('click', function(){
 clickCounter.addEventListener('click', function(){
     qualityCounter=qualityCounter + 1;
     console.log('Counter Clicked')
+})
+
+instructionsShow.addEventListener('click', function(){
+
 })
 
 function setCropQuality() {
