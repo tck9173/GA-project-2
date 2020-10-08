@@ -62,7 +62,7 @@ User stories:
 
 "I wanted to create crops and add them to my farm. Becuase of this app I was able to do that!"
 
-"There was no good way to remember what I had in my farm before this app. Thanks Ghee Ayy Valley!"
+"There was no good way to remember what I had in my farm before this app. Thanks StarDeere Valley!"
 
 "My friends needed crops that I had extras of. I was able to transfer the crops with this app."
 
@@ -70,6 +70,15 @@ User stories:
 
 "I had a lot of crops but no friends. Problem solved with this app!"
 
+"I always wanted to start a farm but did not know what crops I wanted. This app helped me with that!"
+
+"I do not have good social skills so building friendships is hard. Now I can just give people crops and they have to like me more!"
+
+"Other social apps make the other user 'accept' a request. With this app I have more control!"
+
+"I wanted a way to know I am more charitable than everyone else. This app tells me what I want to hear!"
+
+"The graphics are amazing! So retro."
 
 Future work:
 
