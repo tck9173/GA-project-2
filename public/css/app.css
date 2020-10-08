@@ -294,10 +294,6 @@ input {
     font-size: 20px;
 }
 
-a:link {
-    background: #415c57;
-}
-
 a:hover {
     background-color: #5f857e;
 }
