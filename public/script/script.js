@@ -1,5 +1,3 @@
-console.log('Up and running!');
-
 const startGame = document.querySelector('#startGame');
 const clickCounter = document.querySelector('#clickCounter');
 const qualityDisplay = document.querySelector('#qualityDisplay');
@@ -16,7 +14,6 @@ let qualityCounter = 0;
 let instructionsDisplayed = false;
 
 startGame.addEventListener('click', function(){
-    console.log('Clicked');
     qualityCounter = 0;
     countdown();
     setTimeout(setCropQuality, gameTimer)
@@ -32,7 +29,6 @@ startGame.addEventListener('mouseout', function() {
 
 clickCounter.addEventListener('click', function(){
     qualityCounter=qualityCounter + 1;
-    console.log('Counter Clicked')
 })
 
 clickCounter.addEventListener('mouseover', function() {
@@ -66,7 +62,6 @@ instructionsShow.addEventListener('mouseout', function() {
 })
 
 function setCropQuality() {
-    console.log(`User clicked ${qualityCounter} times`)
     qualityDisplay.innerHTML = qualityCounter;
     cropAttribute.setAttribute('action', `${oldCropAttribute}/${qualityCounter}`)
 }
@@ -82,6 +77,5 @@ function countdown() {
             gameMessage.style.color = 'white'
             clearInterval(timeinterval);
         }
-      },1000);
-    
+      },1000);  
 }

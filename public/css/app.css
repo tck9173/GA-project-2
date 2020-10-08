@@ -347,7 +347,9 @@ h4 {
     margin: 3px;
 }
 
-
+.cropDescription {
+    max-width: 500px;
+}
 
 #cropWrapper li{
     margin:0px;
