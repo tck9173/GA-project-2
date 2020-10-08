@@ -323,3 +323,11 @@ input {
 .gameMessage {
     font-size: 20px;
 }
+
+a:hover {
+    background-color: #5f857e;
+}
+
+input:hover {
+    background-color: #5f857e;
+}
