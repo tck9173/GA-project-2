@@ -246,3 +246,50 @@ h4 {
 
 
 
+#cropWrapper li{
+    margin:0px;
+}
+
+.instructions {
+    display: none;
+}
+
+.instructionsShow {
+    border: solid black 3px;
+    background: grey;
+    align-self: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#newCrop {
+    width: 40%;
+    align-self: center;
+    background-color: #625261AA;
+    padding: 15px;
+    border: solid black 3px;
+    border-radius: 10px;
+}
+
+select {
+    color: white;
+    border: 2px solid black;
+    background: #415c57;
+    font-size: 14px;
+}
+
+input {
+    color: white;
+    border: 2px solid black;
+    background: #415c57;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cropSubmit {
+    margin: 10px;
+}
+
+.gameMessage {
+    font-size: 20px;
+}

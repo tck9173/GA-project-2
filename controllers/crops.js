@@ -20,7 +20,6 @@ const renderCropNew = (req,res) => {
 }
 
 const createCrop = (req,res) => {
-    console.log(req.params.quality)
     req.body.userId = req.params.index;
     if (req.params.quality > 60) {
         req.body.quality = "high";
@@ -62,7 +61,6 @@ const deleteCrop = (req,res) => {
         include: [Users]
     })
     .then(crop => {
-        console.log(crop)
         Crops.destroy({
             where: {id: req.params.index}
         })
