@@ -45,19 +45,22 @@
                     <h4>List of <%=user.name%>'s crops</h4>
                     <div id="cropWrapper">
                         <% for (let i=0; i<user.Crops.length; i++) { %>
-                            <li>
-                                <a href='/crops/<%=user.Crops[i].id%>' class= "<%=user.Crops[i].quality%>">
-                                    <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
-                                </a>
-                            </li>
-                            </br>
+                            
+                            <% if(i < 12 ) { %>
+                                <li>
+                                    <a href='/crops/<%=user.Crops[i].id%>' class= "<%=user.Crops[i].quality%>">
+                                        <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
+                                    </a>
+                                </li>
+                                </br>
+                            <% } %>
                         <% } %>
                     </div>
                     </div>
                     <br><br>
                 </div>
                 <div class = "friendsWrapper">
-                    <div><h4>People that have given me gifts.</h4></div>
+                    <div><h4>Who has given crops to help your farm?:</h4></div>
                     <div class = "friends">
                     <% for (let i=0; i<user.Gifters.length; i++) { %>
                         <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
@@ -80,7 +83,6 @@
                         <% } %>
                     <% } %>
                 </select>
-                <br>
                 
                 <label for ='add-friend'>Choose gift:</label>
                 <select name = 'crop.id'>
@@ -88,7 +90,6 @@
                             <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
                     <% } %>
                 </select>
-                <br>
 
                 <input type="submit" name="" value="Add Friend"/>
                 </form>
@@ -113,7 +114,6 @@
                                     <option value="<%=user.Friends[i].id%>"><%=user.Friends[i].name%></option>
                             <% } %>
                         </select>
-                        <br>
                         
                         <label for ='add-friend'>Choose Crop</label>
                         <select name = 'crop.id'>
@@ -121,7 +121,6 @@
                                     <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%></option>
                             <% } %>
                         </select>
-                        <br>
                         <input type="submit" name="" value="Give Gift"/>
                     </form>
                 </div>
