@@ -10,9 +10,9 @@
             <h1>Sign Up</h1>
         </header>
         <form action="/users/signup" method="POST">
-            Name: <input type="text" name="name" required/></br>
-            Username: <input type="text" name="username" required/></br>
-            Password: <input type="text" name="password" required /></br>
+            Name: <input type="text" name="name" required maxlength="16"/></br>
+            Username: <input type="text" name="username" required maxlength="16"/></br>
+            Password: <input type="text" name="password" required maxlength="16"/></br>
             <input type="submit" name="" value="Sign Up"/>
         </form>
         <footer>

@@ -9,6 +9,7 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
+    align-items: center;
 }
 
 a {
@@ -29,6 +30,7 @@ header {
     background-color: #625261AA;
     margin: 50px;
     display: flex;
+    width: 912px;
 }
 
 footer {
@@ -102,6 +104,8 @@ li {
     flex-direction: row;
     justify-content: space-between;
     margin: 20px 50px;
+    height: 385px;
+    width: 912px;
     
 }
 
@@ -126,7 +130,7 @@ img {
 #makeFriend {
     background: #8c280a;
     margin: 5px 10px 10px 10px;
-    padding: 5px;
+    padding: 10px;
     height: 100px;
     width: 350px;
     border-radius: 10px;
@@ -142,42 +146,76 @@ img {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 350px;
-    margin: 0 auto;
+    padding: 10px 0 0 0;
+    width: 330px;
     border: 2px solid white;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #606060;
+
+    
 }
 
-.friendsWrapper {
+.friendsWrapperRight h4 {
+    margin: 0 0 5px 0;
+}
+
+.friendsWrapperLeft {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
+    width: 180px;
+    padding: 10px;
+
+    margin: 0 20px;
     border: 2px solid white;
     border-radius: 20px;
     background: #606060;
 }
-.friends {
+#friendsLeft {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+    height: 100px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+#friendsRight {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 90px;
+    overflow-y:auto;
+    overflow-x:hidden;
 }
 
-.friends a {
-    margin: 5px;;
+#friendsRight a {
+    margin: 5px;
+    height: 15px;
 }
+
+#friendsLeft a {
+    margin: 5px;
+    height: 15px;
+}
+
 
 #giveGifts {
     background: #8c280a;
     margin: 10px 10px 5px 10px;
-    height: 130px;
+    height: 80px;
     width: 350px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     border: 2px solid white;
+}
+
+#giveGifts h3 {
+    margin: 0 0 10px 0;
+
 }
 
 
