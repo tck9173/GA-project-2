@@ -38,61 +38,68 @@
                     <div id= "house">    
                     <img src="https://stardewvalleywiki.com/mediawiki/images/3/30/House_%28tier_1%29.png" alt="farm">
                         <br><br>
-                        <a href="/crops/new/<%=user.id%>">Create New Crop</a>
+                        <div class = "friendsWrapper">
+                            <div><h4>Who has given crops to help your farm?:</h4></div>
+                            <div class = "friends">
+                            <% for (let i=0; i<user.Gifters.length; i++) { %>
+                                <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
+                            <% } %>
+                            </div>
+                        </div>
+                        
                     </div>
                     
                     <div id = crops>
-                    <h4>List of <%=user.name%>'s crops</h4>
-                    <div id="cropWrapper">
-                        <% for (let i=0; i<user.Crops.length; i++) { %>
-                            
-                            <% if(i < 12 ) { %>
-                                <li>
-                                    <a href='/crops/<%=user.Crops[i].id%>' class= "<%=user.Crops[i].quality%>">
-                                        <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
-                                    </a>
-                                </li>
-                                </br>
+                        <div id="cropWrapper">
+                            <% for (let i=0; i<user.Crops.length; i++) { %>
+                                
+                                <% if(i < 12 ) { %>
+                                    <li>
+                                        <a href='/crops/<%=user.Crops[i].id%>' class= "<%=user.Crops[i].quality%>">
+                                            <img class = 'cropThumbnail' src="<%=user.Crops[i].image%>">
+                                        </a>
+                                    </li>
+                                
+                                <% } %>
                             <% } %>
-                        <% } %>
+                        </div>
+                        <br>
+                        <a href="/crops/new/<%=user.id%>">Create New Crop</a>
                     </div>
-                    </div>
-                    <br><br>
+                    
+                    
                 </div>
-                <div class = "friendsWrapper">
-                    <div><h4>Who has given crops to help your farm?:</h4></div>
-                    <div class = "friends">
-                    <% for (let i=0; i<user.Gifters.length; i++) { %>
-                        <a href='/users/showprofile/<%=user.Gifters[i].id%>'><%=user.Gifters[i].name%> <%=user.Gifters[i].Friend.relationship%></a>
-                    <% } %>
-                    </div>
-                </div>
+                
             </div>
             
 
             
 
             <div id="gifting">
-                <form action="/friends/new/<%=user.id%>" method='POST'>
-                <h3>Step 1: Make a friend by giving a gift to someone in the database!</h3>
-                <label for ='add-friend'>Give gift to:</label>
-                <select name = 'userId2'>    
-                    <% for (let j=0; j<notFriends.length; j++) { %>
-                        <% if (notFriends[j].id != user.id) { %>
-                            <option value="<%=notFriends[j].id%>"><%=notFriends[j].name%></option>
-                        <% } %>
-                    <% } %>
-                </select>
                 
-                <label for ='add-friend'>Choose gift:</label>
-                <select name = 'crop.id'>
-                    <% for (let i=0; i<user.Crops.length; i++) { %>
-                            <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
-                    <% } %>
-                </select>
+                <div id="makeFriend">
+                    <form action="/friends/new/<%=user.id%>" method='POST'>
+                    <h3>Step 1: Make a friend by giving a gift to someone in the database!</h3>
+                    <label for ='add-friend'>Give gift to:</label>
+                    
+                    <select name = 'userId2'>    
+                        <% for (let j=0; j<notFriends.length; j++) { %>
+                            <% if (notFriends[j].id != user.id) { %>
+                                <option value="<%=notFriends[j].id%>"><%=notFriends[j].name%></option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                    <br>
+                    <label for ='add-friend'>Choose gift:</label>
+                    <select name = 'crop.id'>
+                        <% for (let i=0; i<user.Crops.length; i++) { %>
+                                <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
+                        <% } %>
+                    </select>
 
-                <input type="submit" name="" value="Add Friend"/>
-                </form>
+                    <input type="submit" name="" value="Add Friend"/>
+                    </form>
+                </div>
                 
                 <div class = "friendsWrapper">
                     <div><h4>Your Friends:</h4></div>
@@ -105,7 +112,7 @@
 
                 
 
-                <div>
+                <div id = "giveGifts">
                     <h3>Step 2: Give your friends more gifts!</h3>
                     <form action="/friends/gifting/<%=user.id%>?_method=PUT" method='POST'>            
                         <label for ='giveGift'>Choose User</label>
@@ -114,6 +121,7 @@
                                     <option value="<%=user.Friends[i].id%>"><%=user.Friends[i].name%></option>
                             <% } %>
                         </select>
+                        <br>
                         
                         <label for ='add-friend'>Choose Crop</label>
                         <select name = 'crop.id'>
