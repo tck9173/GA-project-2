@@ -96,12 +96,13 @@
                                 <option value="<%=user.Crops[i].id%>"><%=user.Crops[i].name%> <%=user.Crops[i].quality%></option>
                         <% } %>
                     </select>
+                    
 
                     <input type="submit" name="" value="Add Friend"/>
                     </form>
                 </div>
                 
-                <div class = "friendsWrapper">
+                <div class = "friendsWrapperRight">
                     <div><h4>Your Friends:</h4></div>
                     <div class = "friends">
                     <% for (let i=0; i<user.Friends.length; i++) { %>
