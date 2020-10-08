@@ -82,6 +82,9 @@ img {
     justify-content: center;
     margin: 0px 30px;
     width: 400px;
+    background-color: #4e6c66dd;
+    border-radius: 10px;
+
 }
 #farmWrapper {
     display: flex;
