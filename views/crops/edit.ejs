@@ -1,21 +1,112 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New Crop</title>
+        <title>Crop Page</title>
         <link rel='stylesheet' href='/css/app.css'>
     </head>
     <body>
         <header>
-            <h1>Edit Crop!</h1>
+            <h1>More about <%=crop.name%></h1>
         </header>
+        <div class='cropDescription'>
+            <img src='<%=crop.image%>'>
+            <% if (crop.name === 'Cauliflower') { %>
+                <p>
+                    Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients.
+                </p>
+                <p>
+                    Cauliflower can become a Giant Crop.
+                </p>
+            <% } else if (crop.name === 'Corn') { %>
+                <p>
+                    One of the most popular grains. The sweet, fresh cobs are a summer favorite.
+                </p>
+                <p>
+                    Keeps producing after maturity. Can be grown in Summer or Fall.
+                </p>
+            <% } else if (crop.name === 'Grape') { %>
+                <p>
+                    A sweet cluster of fruit.
+                </p>
+                <p>
+                    Grapes use a trellis, and continue to produce after maturity.
+                </p>
+            <% } else if (crop.name === 'Hops') { %>
+                <p>
+                    A bitter, tangy flower used to flavor beer.
+                </p>
+                <p>
+                    Hops use a trellis, and continue to produce after maturity.
+                </p>
+            <% } else if (crop.name === 'Pepper') { %>
+                <p>
+                    Fiery hot with a hint of sweetness.
+                </p>
+                <p>
+                    Keeps producing after maturity. When harvested, each Hot Pepper plant gives 1 Hot Pepper every 3 days, with a small random chance for more Hot Peppers.
+                </p>
+            <% } else if (crop.name === 'Pumpkin') { %>
+                <p>
+                    A fall favorite, grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration.
+                </p>
+                <p>
+                    Pumpkins can become a Giant Crop.
+                </p>
+            <% } else if (crop.name === 'Spring_Onion') { %>
+                <p>
+                    These grow wild during the spring.
+                </p>
+            <% } else if (crop.name === 'Starfruit') { %>
+                <p>
+                    An extremely juicy fruit that grows in hot, humid weather. Slightly sweet with a sour undertone.
+                </p>
+            <% } else if (crop.name === 'Strawberry') { %>
+                <p>
+                    A sweet, juicy favorite with an appealing red color.   
+                </p>
+                <p> 
+                    Keeps producing after maturity. When harvested, each Strawberry plant gives 1 Strawberry every 4 days, with a small random chance for more Strawberries.
+                </p>
+            <% } else if (crop.name === 'Sunflower') { %>
+                <p>
+                    A common misconception is that the flower turns so it's always facing the sun.
+                </p>
+                <p>
+                    Harvesting a sunflower will also produce 0-2 Sunflower Seeds. Sunflowers can be grown in Summer or Fall.
+                </p>
+            <% } else if (crop.name === 'Tomato') { %>
+                <p>
+                    Rich and slightly tangy, the Tomato has a wide variety of culinary uses.
+                </p>
+                <p>
+                    Keeps producing after maturity. Each harvest produces 1 tomato, with a small random chance for more tomatoes.
+                </p>
+            <% } else if (crop.name === 'Wheat') { %>
+                <p>
+                    One of the most widely cultivated grains. Makes a great flour for breads and cakes.
+                </p>
+                <p>
+                    Can be grown in Summer or Fall.
+                </p>
+            <% } else if (crop.name === 'Burger') { %>
+                <p>
+                    It's a burger. What else do you want us to say?
+                </p>
+            <% } %>
+        </div>
+            
         
-        <form action="/crops/<%=crop.id%>?_method=PUT" method="POST">
-            Name: <input type="text" name="name" value='<%=crop.name%>' required/>
-            <input type="submit" name="" value="Edit Crop"/>
-        </form>
+        
+        
+            
+            
+        
         <form action='/crops/<%=crop.id%>?_method=DELETE' method='POST'>
             <input type='submit'  value="DELETE"/>
         </form>
-        This crop is on <%=crop.User.name%>'s farm
+        <p>This crop is on <%=crop.User.name%>'s farm</p>
+        <nav>
+            <a href="/users/profile/<%=crop.User.id%>">My Farm</a>
+        </nav>
     </body>
 </html>
