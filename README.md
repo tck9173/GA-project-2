@@ -1,10 +1,10 @@
 # GA-project-2
-StarDeere Valley
+# **StarDeere Valley**
 Build a farm and make friendships! Create your user, add crops to your farm and let the friendships grow.
 	
-Functionality - MVP
+## Functionality - MVP
 
-Bronze
+## Bronze
 
 -Full CRUD for users
 	
@@ -16,7 +16,7 @@ Bronze
 
 -Gifting ability to increase relation levels
 
-Silver
+## Silver
 
 -Visually layout farm to match game 
 
@@ -27,7 +27,7 @@ Silver
 -List of people that have given me gifts
 
 
-ERD:
+## ERD:
 
 ![ERD](https://i.imgur.com/c6XJYow.png)
 
@@ -39,7 +39,7 @@ Tables
 
 -Friends
 
-Wireframes:
+## Wireframes:
 
 ![Wireframe](https://i.imgur.com/FbicITX.png)
 
@@ -49,7 +49,7 @@ Wireframes:
 
 ![Wireframe](https://i.imgur.com/5UuMnL4.png)
 
-Screenshots:
+## Screenshots:
 ![Screenshot](https://i.imgur.com/DPnDL9l.png)
 
 ![Screenshot](https://i.imgur.com/eq75fMx.png)
@@ -58,7 +58,7 @@ Screenshots:
 
 ![Screenshot](https://i.imgur.com/B9pjQbu.png)
 
-User stories:
+## User stories:
 
 "I wanted to create crops and add them to my farm. Becuase of this app I was able to do that!"
 
